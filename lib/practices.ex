@@ -108,4 +108,23 @@ defmodule Practices do
       )
     )
   end
+
+  @doc """
+    Accum. Duplicate characters based on index
+
+    ## Example
+
+      iex > Practices.accum "abcd"
+      A-Bb-Ccc-Dddd
+  """
+  def accum(str) do
+    Enum.map(
+      str
+        |> String.codepoints
+        |> Enum.with_index(1),
+      fn(x) ->
+        elem(x, 0) |> String.duplicate(elem(x,1)) |> String.capitalize
+      end
+    ) |> Enum.join("-")
+  end
 end
