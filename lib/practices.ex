@@ -80,4 +80,32 @@ defmodule Practices do
       str_list |> List.insert_at(-1, "_") |> Enum.chunk(2) |> Enum.map(fn(x) -> x |> Enum.join() end)
     end
   end
+
+
+  @doc """
+    Converts a regular english sentence to Leetspeak.
+    Consider only uppercase letters (no lowercase letters, no numbers) and spaces
+
+    ## Example
+
+      iex > Practices.to_let_speak("VINCENT")
+      V!N(3N7
+      iex > Practices.to_let_speak("vincent nguyen")
+      V!N(3N7 N6UY3N
+  """
+  @eet_code %{ A: '@', B: '8', C: '(', D: 'D', E: '3', F: 'F', G: 6, H: '#', I: '!', J: 'J', K: 'K', L: 1, M: 'M',
+            N: 'N', O: '0', P: 'P', Q: 'Q', R: 'R', S: '$', T: '7', U: 'U', V: 'V', W: 'W', X: 'X', Y: 'Y', Z: '2', " ": " "}
+
+  def to_let_speak(str) do
+    Enum.join(
+      Enum.map(
+        str
+          |> String.upcase
+          |> String.codepoints,
+        fn(x) ->
+          @eet_code[x |> String.to_atom]
+        end
+      )
+    )
+  end
 end
