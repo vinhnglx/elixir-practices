@@ -8,7 +8,7 @@ Solve katas
 iex -S mix run
 ```
 
-### 03-jun-2017
+### 03-Jun-2017
 
 - [Counting Duplicates](http://www.codewars.com/kata/counting-duplicates)
 
@@ -18,3 +18,8 @@ iex -S mix run
 
 - [Split Strings](http://www.codewars.com/kata/split-strings)
 
+### 04-Jun-2017
+
+- [ToLeetSpeak](http://www.codewars.com/kata/toleetspeak)
+
+- [Mumbling](http://www.codewars.com/kata/mumbling)
