@@ -23,3 +23,9 @@ iex -S mix run
 - [ToLeetSpeak](http://www.codewars.com/kata/toleetspeak)
 
 - [Mumbling](http://www.codewars.com/kata/mumbling)
+
+### 05-Jun-2017
+
+- [Two Oldest Ages](http://www.codewars.com/kata/two-oldest-ages-1)
+
+- [Reverse and Invert](http://www.codewars.com/kata/reverse-and-invert)
