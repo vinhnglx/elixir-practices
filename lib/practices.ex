@@ -141,4 +141,40 @@ defmodule Practices do
   def two_oldest_elements(list) do
     [List.delete(list, list |> Enum.max) |> Enum.max, list |> Enum.max]
   end
+
+  @doc """
+    Reverse and invert all integer values in a given list.
+
+    ## Example
+
+      iex > Practices.revert_invert([1,20, 'a', 3.4, 92, -245, 50])
+      [-1, -2, -29, 542, -5]
+  """
+  def revert_invert(list) do
+    list
+      |> Enum.filter(
+        fn(x) -> is_integer x end
+      )
+      |> Enum.map(
+        fn(x) ->
+          x
+            |> to_string
+            |> String.reverse
+        end
+      )
+      |> Enum.map(
+        fn(x) ->
+          if x |> String.contains?("-") do
+            x |> String.strip(?-) |> String.replace_prefix("", "-") |> String.to_integer
+          else
+            x |> String.to_integer
+          end
+        end
+      )
+      |> Enum.map(
+        fn(x) ->
+          x * -1
+        end
+      )
+  end
 end
