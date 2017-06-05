@@ -127,4 +127,18 @@ defmodule Practices do
       end
     ) |> Enum.join("-")
   end
+
+  @doc """
+    Two oldest elements from List
+
+    ## Example
+
+      iex > Practices.two_oldest_elements([1,4,5,6,8])
+      [6,8]
+      iex > Practices.two_oldest_elements([3,5,100,30,0])
+      [30, 100]
+  """
+  def two_oldest_elements(list) do
+    [List.delete(list, list |> Enum.max) |> Enum.max, list |> Enum.max]
+  end
 end
