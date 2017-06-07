@@ -177,4 +177,28 @@ defmodule Practices do
         end
       )
   end
+
+  @doc """
+    Get the middle character of a word.
+    If word's length is odd then return a middle character
+    if word's length is even then return two middle characters
+
+    ## Example
+
+      iex > Practices.get_middle("vincent")
+      "c"
+      iex > Practices.get_middle("john")
+      "oh"
+  """
+  def get_middle(word) do
+    wrd_length = word |> String.length
+
+    require Integer
+
+    if Integer.is_odd(wrd_length) do
+      word |> String.at(round(wrd_length/2) - 1)
+    else
+      String.at(word, round(wrd_length/2 - 1)) <> String.at(word, round(wrd_length/2))
+    end
+  end
 end

@@ -29,3 +29,7 @@ iex -S mix run
 - [Two Oldest Ages](http://www.codewars.com/kata/two-oldest-ages-1)
 
 - [Reverse and Invert](http://www.codewars.com/kata/reverse-and-invert)
+
+### 07-Jun-2017
+
+- [Middle Character](http://www.codewars.com/kata/get-the-middle-character)
