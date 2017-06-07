@@ -214,4 +214,16 @@ defmodule Practices do
   def count_monkeys(n) do
     Enum.map(1..n, fn(x) -> x end)
   end
+
+  @doc """
+    Show the length of the words separated by a space to be added at the end of that same word
+
+    ## Example
+
+      iex > Practices.add_length("You will pass. Don't worry")
+      ["You 3", "will 4", "pass. 5", "Don't 5", "worry 5"]
+  """
+  def add_length(string) do
+    string |> String.split |> Enum.map(fn(x) -> x <> " " <> (String.length(x) |> Integer.to_string) end)
+  end
 end

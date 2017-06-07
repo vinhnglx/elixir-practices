@@ -35,3 +35,5 @@ iex -S mix run
 - [Middle Character](http://www.codewars.com/kata/get-the-middle-character)
 
 - [Count Monkeys](http://www.codewars.com/kata/count-the-monkeys)
+
+- [Add Length](http://www.codewars.com/kata/add-length)
