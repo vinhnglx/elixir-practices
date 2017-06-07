@@ -201,4 +201,17 @@ defmodule Practices do
       String.at(word, round(wrd_length/2 - 1)) <> String.at(word, round(wrd_length/2))
     end
   end
+
+  @doc """
+    Count the monkeys
+    Given the number (n), populate an array with all numbers up to and including that number, but excluding zero.
+
+    ## Example
+
+      iex > Practices.count_monkeys(10)
+      [1,2,3,4,5,6,7,8,9,10]
+  """
+  def count_monkeys(n) do
+    Enum.map(1..n, fn(x) -> x end)
+  end
 end

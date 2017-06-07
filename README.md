@@ -33,3 +33,5 @@ iex -S mix run
 ### 07-Jun-2017
 
 - [Middle Character](http://www.codewars.com/kata/get-the-middle-character)
+
+- [Count Monkeys](http://www.codewars.com/kata/count-the-monkeys)
