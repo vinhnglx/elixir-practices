@@ -37,3 +37,5 @@ iex -S mix run
 - [Count Monkeys](http://www.codewars.com/kata/count-the-monkeys)
 
 - [Add Length](http://www.codewars.com/kata/add-length)
+
+- [Convert string to camel case](http://www.codewars.com/kata/convert-string-to-camel-case)

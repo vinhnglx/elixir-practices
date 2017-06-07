@@ -226,4 +226,19 @@ defmodule Practices do
   def add_length(string) do
     string |> String.split |> Enum.map(fn(x) -> x <> " " <> (String.length(x) |> Integer.to_string) end)
   end
+
+  @doc """
+    Convert string to camelCase
+
+    ## Example
+
+      iex > Practices.to_camel_case("the-stealth-warrior")
+      theStealthWarrior
+      iex > Practices.to_camel_case("Vincent_Nguyen")
+      VincentNguyen
+  """
+  def to_camel_case(str) do
+    [head | tail] = str |> String.split(~r{,|-|_|\s})
+    head <> (tail |> Enum.map(fn(x) -> x |> String.capitalize end) |> Enum.join)
+  end
 end
