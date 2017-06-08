@@ -75,10 +75,9 @@ defmodule Practices do
 
     str_length = str |> String.length
 
-    if str_length |> rem(2) === 0 do
-      str_list |> Enum.chunk(2) |> Enum.map(fn(x) -> x |> Enum.join() end)
-    else
-      str_list |> List.insert_at(-1, "_") |> Enum.chunk(2) |> Enum.map(fn(x) -> x |> Enum.join() end)
+    case str_length |> rem(2) === 0 do
+      true -> str_list |> Enum.chunk(2) |> Enum.map(fn(x) -> x |> Enum.join() end)
+      false -> str_list |> List.insert_at(-1, "_") |> Enum.chunk(2) |> Enum.map(fn(x) -> x |> Enum.join() end)
     end
   end
 
