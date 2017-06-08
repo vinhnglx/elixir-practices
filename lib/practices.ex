@@ -8,23 +8,22 @@ defmodule Practices do
 
     ## Example
 
-        iex > Practices.count_duplicates("abABcdef")
-        2 # a,b
-        iex > Practices.count_duplicates("impossible")
-        2 # i,s
+        iex > Practices.count_duplicates({:string, "abABcdef"})
+        {:ok, 2} # a,b
+        iex > Practices.count_duplicates({:string, "impossible"})
+        {:ok, 2} # i,s
         iex > Practices.count_duplicates(1111)
         {:error, {:not_a_string, 1111}}
   """
-  def count_duplicates(unknown) do
-    {:error, {:not_a_string, unknown}}
-  end
-  def count_duplicates(str) do
-    # NOTE: _ means this value is not be used
-    str
+  def count_duplicates({:string, str}) do
+    {:ok, str
       |> String.downcase()
       |> String.split("", trim: true)
       |> Enum.group_by(fn(x) -> x end)
-      |> Enum.count(fn({_key, value}) -> value |> Enum.count() > 1 end)
+      |> Enum.count(fn({_key, value}) -> value |> Enum.count() > 1 end)}
+  end
+  def count_duplicates(unknown) do
+    {:error, {:not_a_string, unknown}}
   end
 
   @doc """
