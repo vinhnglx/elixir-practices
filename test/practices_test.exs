@@ -34,4 +34,17 @@ defmodule PracticesTest do
   test "accum" do
     assert Practices.accum("vincent") == "V-Ii-Nnn-Cccc-Eeeee-Nnnnnn-Ttttttt"
   end
+
+  test "two oldest element from a list" do
+    assert Practices.two_oldest_elements([3,4,5,100,30]) == [30,100]
+  end
+
+  test "revert invert" do
+    assert Practices.revert_invert([1,40,"a", "vincent", -99, 4, 0]) == [-1, -4, 99, -4, 0]
+  end
+
+  test "get middle of word" do
+    assert Practices.get_middle("Interesting") == "e"
+    assert Practices.get_middle("JohnDoe") == "n"
+  end
 end
