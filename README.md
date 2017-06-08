@@ -39,3 +39,7 @@ iex -S mix run
 - [Add Length](http://www.codewars.com/kata/add-length)
 
 - [Convert string to camel case](http://www.codewars.com/kata/convert-string-to-camel-case)
+
+### 08-Jun-2017
+
+- [Write test case for katas](https://github.com/vinhnglx/elixir-practices/blob/master/test/practices_test.exs)
