@@ -43,3 +43,5 @@ iex -S mix run
 ### 08-Jun-2017
 
 - [Write test case for katas](https://github.com/vinhnglx/elixir-practices/blob/master/test/practices_test.exs)
+
+- [A list is a sub-string of another list](http://www.codewars.com/kata/which-are-in)
