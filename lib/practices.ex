@@ -12,7 +12,12 @@ defmodule Practices do
         2 # a,b
         iex > Practices.count_duplicates("impossible")
         2 # i,s
+        iex > Practices.count_duplicates(1111)
+        {:error, {:not_a_string, 1111}}
   """
+  def count_duplicates(unknown) do
+    {:error, {:not_a_string, unknown}}
+  end
   def count_duplicates(str) do
     # NOTE: _ means this value is not be used
     str
@@ -196,7 +201,7 @@ defmodule Practices do
     require Integer
 
     if Integer.is_odd(wrd_length) do
-      word |> String.at(round(wrd_length/2) - 1)
+      word |> String.at(div(wrd_length, 2))
     else
       String.at(word, round(wrd_length/2 - 1)) <> String.at(word, round(wrd_length/2))
     end
