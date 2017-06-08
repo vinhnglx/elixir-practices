@@ -26,4 +26,12 @@ defmodule PracticesTest do
     assert Practices.split_string_pair("vnsg") == ["vn", "sg"]
     assert Practices.split_string_pair("hello") == ["he", "ll", "o_"]
   end
+
+  test "leet code" do
+    assert Practices.to_let_speak("Hello") == "#3110"
+  end
+
+  test "accum" do
+    assert Practices.accum("vincent") == "V-Ii-Nnn-Cccc-Eeeee-Nnnnnn-Ttttttt"
+  end
 end
