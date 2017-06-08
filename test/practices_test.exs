@@ -17,4 +17,13 @@ defmodule PracticesTest do
     result = Practices.string_repeat(3, "God")
     assert result == "GodGodGod"
   end
+
+  test "oppsite number" do
+    assert Practices.opposite_num(3) == -3
+  end
+
+  test "split string to pair of two chars" do
+    assert Practices.split_string_pair("vnsg") == ["vn", "sg"]
+    assert Practices.split_string_pair("hello") == ["he", "ll", "o_"]
+  end
 end
