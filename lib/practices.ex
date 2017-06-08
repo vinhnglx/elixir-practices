@@ -241,4 +241,20 @@ defmodule Practices do
     [head | tail] = str |> String.split(~r{,|-|_|\s})
     head <> (tail |> Enum.map(fn(x) -> x |> String.capitalize end) |> Enum.join)
   end
+
+  @doc """
+    Return a sorted list r in lexicographical order of the strings of a1 which are substrings of strings of a2.
+
+    ## Example
+
+      iex > Practices.lexicographical_sorted_list(["arp", "live", "strong"], ["lively", "alive", "harp", "sharp", "armstrong"])
+      ["arp", "live", "strong"]
+  """
+  def lexicographical_sorted_list(a1, a2) do
+    a1 |> Enum.filter(fn(x) -> substring?(x, a2) end) |> Enum.sort
+  end
+
+  defp substring?(substring, a2) do
+    Enum.any?(a2, fn(x) -> String.contains?(x, substring) end)
+  end
 end

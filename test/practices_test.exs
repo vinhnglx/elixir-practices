@@ -60,4 +60,8 @@ defmodule PracticesTest do
     assert Practices.to_camel_case("the-limitation") == "theLimitation"
     assert Practices.to_camel_case("John_Doe_is_a_man") == "JohnDoeIsAMan"
   end
+
+  test "a list is a substring of another list" do
+    assert Practices.lexicographical_sorted_list(["arp", "live", "strong"], ["lively", "alive", "harp", "sharp", "armstrong"]) == ["arp", "live", "strong"]
+  end
 end
