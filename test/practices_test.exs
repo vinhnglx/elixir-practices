@@ -47,4 +47,17 @@ defmodule PracticesTest do
     assert Practices.get_middle("Interesting") == "e"
     assert Practices.get_middle("JohnDoe") == "n"
   end
+
+  test "count monkey" do
+    assert Practices.count_monkeys(3) == [1,2,3]
+  end
+
+  test "add length for each word in a string" do
+    assert Practices.add_length("Hello world! I'm Vincent") == ["Hello 5", "world! 6", "I'm 3", "Vincent 7"]
+  end
+
+  test "to camel case" do
+    assert Practices.to_camel_case("the-limitation") == "theLimitation"
+    assert Practices.to_camel_case("John_Doe_is_a_man") == "JohnDoeIsAMan"
+  end
 end
