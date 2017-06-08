@@ -36,14 +36,11 @@ defmodule Practices do
       iex > Practices.string_repeat(0, "Vb")
       ""
   """
-  def string_repeat(number, str) do
-    if (number === 0 || number < 0) do
-      ""
-    else
-      if number > 0 do
-        str |> String.duplicate(number)
-      end
-    end
+  def string_repeat(number, _str) when number < 0 or number === 0 do
+    ""
+  end
+  def string_repeat(number, str) when number > 0 do
+    str |> String.duplicate(number)
   end
 
   @doc """
