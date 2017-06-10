@@ -51,3 +51,5 @@ iex -S mix run
 - [Validate username with regex](http://www.codewars.com/kata/simple-validation-of-a-username-with-regex)
 
 - [Is the string uppercase?](http://www.codewars.com/kata/is-the-string-uppercase)
+
+- [Two to one](http://www.codewars.com/kata/two-to-one)
