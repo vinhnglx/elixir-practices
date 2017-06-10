@@ -45,3 +45,9 @@ iex -S mix run
 - [Write test case for katas](https://github.com/vinhnglx/elixir-practices/blob/master/test/practices_test.exs)
 
 - [A list is a sub-string of another list](http://www.codewars.com/kata/which-are-in)
+
+### 10-Jun-2017
+
+- [Validate username with regex](http://www.codewars.com/kata/simple-validation-of-a-username-with-regex)
+
+- [Is the string uppercase?](http://www.codewars.com/kata/is-the-string-uppercase)
