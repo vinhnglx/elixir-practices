@@ -80,4 +80,9 @@ defmodule PracticesTest do
     assert Practices.upper_case?("M") == true
     assert Practices.upper_case?("ACSKLDFJSGSKLDFJSKLDFJ") == true
   end
+
+  test "two to one longest string" do
+    assert Practices.longest("xyaabbbccccdefww", "xxxxyyyyabklmopq") == "abcdefklmopqwxy"
+    assert Practices.longest("abcdefghijklmnopqrstuvwxyz", "abcdefghijklmnopqrstuvwxyz") == "abcdefghijklmnopqrstuvwxyz"
+  end
 end

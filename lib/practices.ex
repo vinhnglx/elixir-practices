@@ -287,4 +287,17 @@ defmodule Practices do
   def upper_case?(string) do
     string === string |> String.upcase
   end
+
+  @doc """
+    Two to one.
+    Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing distinct letters,
+
+    ## Example
+
+      iex > Practices.longest("xyaabbbccccdefww", "xxxxyyyyabklmopq")
+      abcdefklmopqwxy
+  """
+  def longest(a, b) do
+    a <> b |> String.codepoints |> Enum.uniq |> Enum.sort |> Enum.join
+  end
 end
