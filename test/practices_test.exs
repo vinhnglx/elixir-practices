@@ -64,4 +64,20 @@ defmodule PracticesTest do
   test "a list is a substring of another list" do
     assert Practices.lexicographical_sorted_list(["arp", "live", "strong"], ["lively", "alive", "harp", "sharp", "armstrong"]) == ["arp", "live", "strong"]
   end
+
+  test "valid user_name" do
+    assert Practices.valid_user_name?("vincent") == true
+    assert Practices.valid_user_name?("vin") == false
+    assert Practices.valid_user_name?("vinvinvinvinvinvinvinvinvinivnivni") == false
+    assert Practices.valid_user_name?("vin@234!3$") == false
+    assert Practices.valid_user_name?("vincent_nguyen") == true
+  end
+
+  test "is the string uppercase" do
+    assert Practices.upper_case?("hello I AM DONALD") == false
+    assert Practices.upper_case?("ACSKLDFJSgSKLDFJSKLDFJ") == false
+    assert Practices.upper_case?("HELLO I AM DONALD") == true
+    assert Practices.upper_case?("M") == true
+    assert Practices.upper_case?("ACSKLDFJSGSKLDFJSKLDFJ") == true
+  end
 end

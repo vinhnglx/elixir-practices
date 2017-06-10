@@ -257,4 +257,34 @@ defmodule Practices do
   defp substring?(substring, a2) do
     Enum.any?(a2, fn(x) -> String.contains?(x, substring) end)
   end
+
+  @doc """
+    Regex to validate a user_name - Any word character (letter, number, underscore) - Length from 4 to 16 chars
+
+    ## Example
+
+      iex > Practices.valid_user_name?("asd43_34$n")
+      false
+      iex > Practices.valid_user_name?("vincent")
+      true
+  """
+  def valid_user_name?(user_name) do
+    user_name |> String.match?(~r/^\w{4,16}$/)
+  end
+
+  @doc """
+    Is the string uppercase?
+
+    ## Example
+
+      iex > Practices.upper_case?("c")
+      false
+      iex > Practices.upper_case?("vinCent")
+      false
+      iex > Practices.upper_case?("HELLO")
+      true
+  """
+  def upper_case?(string) do
+    string === string |> String.upcase
+  end
 end
