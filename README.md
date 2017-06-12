@@ -53,3 +53,7 @@ iex -S mix run
 - [Is the string uppercase?](http://www.codewars.com/kata/is-the-string-uppercase)
 
 - [Two to one](http://www.codewars.com/kata/two-to-one)
+
+### 12-Jun-2017
+
+- [Length of the list - Tail & Non-tail recursive form](https://github.com/vinhnglx/elixir-practices/blob/master/lib/practices.exs#L304-L335)

@@ -300,4 +300,55 @@ defmodule Practices do
   def longest(a, b) do
     a <> b |> String.codepoints |> Enum.uniq |> Enum.sort |> Enum.join
   end
+
+  @doc """
+    List length
+    Caculates the lengh of a list. These functions will use non-tail-recursive form and tail-recursive form to implement
+
+    ## Example
+
+      iex > Practices.length_list_non_tail([1,2,3])
+      3
+      iex > Practices.length_list_tail([1,2,4,4])
+      4
+  """
+  def length_list_non_tail([]) do
+    0
+  end
+
+  def length_list_non_tail([_head | tail]) do
+    1 + length_list_tail(tail)
+  end
+
+  def length_list_tail(list) do
+    length(0, list)
+  end
+
+  # Private functions
+  defp length(current_length, []) do
+    current_length
+  end
+
+  defp length(current_length, [_head | tail]) do
+    new_length = current_length + 1
+    length(new_length, tail)
+  end
+
+  @doc """
+    Return a list from two integers
+
+    ## Example
+
+      iex > Practices.range(1,5)
+      [1,2,3,4,5]
+      iex > Practices.range(4)
+      [4]
+  """
+  def range(from, to) do
+    if from === to do
+      [from]
+    else
+      [from | range(from + 1, to)]
+    end
+  end
 end

@@ -85,4 +85,18 @@ defmodule PracticesTest do
     assert Practices.longest("xyaabbbccccdefww", "xxxxyyyyabklmopq") == "abcdefklmopqwxy"
     assert Practices.longest("abcdefghijklmnopqrstuvwxyz", "abcdefghijklmnopqrstuvwxyz") == "abcdefghijklmnopqrstuvwxyz"
   end
+
+  test "length list" do
+    assert Practices.length_list_non_tail([1,2,3]) == 3
+    assert Practices.length_list_non_tail([]) == 0
+
+    assert Practices.length_list_tail([1,2,3,4,5]) == 5
+    assert Practices.length_list_tail([1]) == 1
+    assert Practices.length_list_tail([]) == 0
+  end
+
+  test "range" do
+    assert Practices.range(3,6) == [3,4,5,6]
+    assert Practices.range(4,4) == [4]
+  end
 end
