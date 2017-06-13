@@ -317,7 +317,7 @@ defmodule Practices do
   end
 
   def length_list_non_tail([_head | tail]) do
-    1 + length_list_tail(tail)
+    1 + length_list_non_tail(tail)
   end
 
   def length_list_tail(list) do
