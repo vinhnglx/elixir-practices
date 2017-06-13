@@ -112,11 +112,18 @@ defmodule PracticesTest do
   end
 
   test "length of the line from a file" do
-    assert Practices.lines_length('./test/sample_data.txt') == %{"line 1" => 11, "line 2" => 19}
+    assert Practices.lines_length('./test/sample_data.txt') == %{"line 1" => 11, "line 2" => 18}
   end
 
   test "length of longest line from a file" do
-    lines_length = Practices.lines_length('./test/sample_data.txt') # %{"line 1" => 11, "line 2" => 19}
-    assert Practices.longest_line_length(lines_length) == 19
+    assert Practices.longest_line_length('./test/sample_data.txt') == 18
+  end
+
+  test "content of longest line from a file" do
+    assert Practices.content_longest_line('./test/sample_data.txt') == "My name is Vincent"
+  end
+
+  test "word count per line from a file" do
+    assert Practices.words_per_line('./test/sample_data.txt') == [2,4]
   end
 end

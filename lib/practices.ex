@@ -411,9 +411,7 @@ defmodule Practices do
       %{"line 1" => 11, "line 2" => 19}
   """
   def lines_length(file_path) do
-    {:ok, data} = File.read(file_path)
-    data
-      |> String.split("\n", trim: true)
+    data_of_file(File.read(file_path))
       |> Stream.map(fn(x) -> x |> String.length end)
       |> Stream.with_index
       |> Enum.map(
@@ -429,11 +427,54 @@ defmodule Practices do
 
     ## Example
 
-      iex > lines_length = Practices.lines_length('path/to/file')
-      iex > Practices.longest_line_length(lines_length)
+      iex > Practices.longest_line_length('path/to/file')
       19
   """
-  def longest_line_length(lines) do
-    lines |> Enum.map(fn({_k, v})-> v end) |> Enum.max
+  def longest_line_length(file_path) do
+    lines_length(file_path) |> Enum.map(fn({_k, v})-> v end) |> Enum.max
+  end
+
+  @doc """
+    Return the content of longest line from a file
+
+    ## Example
+
+      iex > Practices.content_longest_line('path/to/file)
+      My name is Vincent
+  """
+  def content_longest_line(file_path) do
+    contents = content_length_map(file_path)
+    contents[longest_line_length(file_path)]
+  end
+
+  @doc """
+    Returns a list of number, each number representing the word count in a file
+
+    ## Example
+
+      iex > Practices.words_per_line('path/to/file')
+      [2,4]
+  """
+  def words_per_line(file_path) do
+    data_of_file(File.read(file_path))
+      |> Enum.map(fn(x)-> x |> String.split |> Enum.count end)
+  end
+
+  # Private: Return a list of content of lines from a file
+  defp data_of_file(read_file) do
+    {:ok, data} = read_file
+    data
+      |> String.split("\n", trim: true)
+  end
+
+  # Private: return a map includes length of line and content from a file
+  defp content_length_map(file_path) do
+    data_of_file(File.read(file_path))
+      |> Enum.map(
+        fn(x) ->
+          {x |> String.length, x}
+        end
+      )
+      |> Map.new
   end
 end
