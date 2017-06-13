@@ -102,4 +102,12 @@ defmodule PracticesTest do
     assert Practices.range_tail([], 3, 9) == [3,4,5,6,7,8,9]
     assert Practices.range_tail([], 3, 3) == [3]
   end
+
+  test "positive" do
+    assert Practices.positive_non_tail(["a", -1, 2, 3, 5, -3]) == [2,3,5]
+    assert Practices.positive_non_tail([]) == []
+
+    assert Practices.positive_tail(["a", "b", -1, 2, 3]) == [2,3]
+    assert Practices.positive_tail([]) == []
+  end
 end

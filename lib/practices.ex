@@ -339,10 +339,10 @@ defmodule Practices do
 
     ## Example
 
-      iex > Practices.range(1,5)
+      iex > Practices.range_non_tail(1,5)
       [1,2,3,4,5]
-      iex > Practices.range(4)
-      [4]
+      iex > Practices.range_tail(4, 9)
+      [4,5,6,7,8,9]
   """
   def range_non_tail(from, to) when from > to do
     []
@@ -362,5 +362,43 @@ defmodule Practices do
 
   defp range(current_range, from, to) do
     range([to | current_range], from, to - 1)
+  end
+
+  @doc """
+    Returns a list of positive numbers from another list
+
+    ## Examples
+
+      iex > Practices.positive_non_tail(["a", -1, 2, 3, 4, -5, 5])
+      [2,3,4,5]
+      iex > Practices.positive_tail(["a", -1, 2, 3, 4, -5, 5])
+      [2,3,4,5]
+  """
+  def positive_non_tail([]) do
+    []
+  end
+
+  def positive_non_tail([head | tail]) when is_integer(head) and head > 0 do
+    [head | positive_non_tail(tail)]
+  end
+
+  def positive_non_tail([_head | tail]) do
+    positive_non_tail(tail)
+  end
+
+  def positive_tail(list) do
+    positive(list, [])
+  end
+
+  defp positive([], result) do
+    Enum.reverse(result)
+  end
+
+  defp positive([head | tail], result) when is_integer(head) and head > 0 do
+    positive(tail, [head | result])
+  end
+
+  defp positive([_ | tail], result) do
+    positive(tail, result)
   end
 end
