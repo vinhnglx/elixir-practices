@@ -96,7 +96,7 @@ defmodule PracticesTest do
   end
 
   test "range" do
-    assert Practices.range(3,6) == [3,4,5,6]
-    assert Practices.range(4,4) == [4]
+    assert Practices.range_non_tail(3,6) == [3,4,5,6]
+    assert Practices.range_non_tail(4,4) == [4]
   end
 end

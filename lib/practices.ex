@@ -344,11 +344,11 @@ defmodule Practices do
       iex > Practices.range(4)
       [4]
   """
-  def range(from, to) do
-    if from === to do
-      [from]
-    else
-      [from | range(from + 1, to)]
-    end
+  def range_non_tail(from, to) when from > to do
+    []
+  end
+
+  def range_non_tail(from, to) do
+    [from | range_non_tail(from + 1, to)]
   end
 end
