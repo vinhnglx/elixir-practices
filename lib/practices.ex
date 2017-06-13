@@ -401,4 +401,39 @@ defmodule Practices do
   defp positive([_ | tail], result) do
     positive(tail, result)
   end
+
+  @doc """
+    Read a file and return a list of numbers, with each number representing the length of the corresponding line from the file
+
+    ## Example
+
+      iex > Practices.lines_length('/path/to/file')
+      %{"line 1" => 11, "line 2" => 19}
+  """
+  def lines_length(file_path) do
+    {:ok, data} = File.read(file_path)
+    data
+      |> String.split("\n", trim: true)
+      |> Stream.map(fn(x) -> x |> String.length end)
+      |> Stream.with_index
+      |> Enum.map(
+        fn({line, index}) ->
+          {"line #{index + 1}", line}
+        end
+      )
+      |> Map.new
+  end
+
+  @doc """
+    Return the length of the longest line in a file
+
+    ## Example
+
+      iex > lines_length = Practices.lines_length('path/to/file')
+      iex > Practices.longest_line_length(lines_length)
+      19
+  """
+  def longest_line_length(lines) do
+    lines |> Enum.map(fn({_k, v})-> v end) |> Enum.max
+  end
 end

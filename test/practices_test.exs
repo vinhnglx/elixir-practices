@@ -110,4 +110,13 @@ defmodule PracticesTest do
     assert Practices.positive_tail(["a", "b", -1, 2, 3]) == [2,3]
     assert Practices.positive_tail([]) == []
   end
+
+  test "length of the line from a file" do
+    assert Practices.lines_length('./test/sample_data.txt') == %{"line 1" => 11, "line 2" => 19}
+  end
+
+  test "length of longest line from a file" do
+    lines_length = Practices.lines_length('./test/sample_data.txt') # %{"line 1" => 11, "line 2" => 19}
+    assert Practices.longest_line_length(lines_length) == 19
+  end
 end
