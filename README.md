@@ -59,3 +59,13 @@ iex -S mix run
 - [Length of the list - Tail & Non-tail recursive form](https://github.com/vinhnglx/elixir-practices/blob/master/lib/practices.exs#L304-L335)
 - [Create range from two integer - Tail & Non-tail recursive form](https://github.com/vinhnglx/elixir-practices/blob/master/lib/practices.exs#L337-L364)
 - [Positive list - Tail & Non-tail recursive form](https://github.com/vinhnglx/elixir-practices/blob/master/lib/practices.exs#L367-L403)
+
+### 13-Jun-2017
+
+- [Solve four small problems when reading a file:](https://github.com/vinhnglx/elixir-practices/blob/master/lib/practices.exs#L405-479)
+
+a. Returns a list of number, with each number representing the length of corresponding line from a file
+b. Returns the length of longest line from a file
+c. Returns the content of longest line from a file
+d. Returns number of words per line from a file
+
