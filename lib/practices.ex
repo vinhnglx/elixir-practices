@@ -351,4 +351,16 @@ defmodule Practices do
   def range_non_tail(from, to) do
     [from | range_non_tail(from + 1, to)]
   end
+
+  def range_tail([], from, to) do
+    range([], from, to)
+  end
+
+  defp range(current_range, from, to) when from > to do
+    current_range
+  end
+
+  defp range(current_range, from, to) do
+    range([to | current_range], from, to - 1)
+  end
 end

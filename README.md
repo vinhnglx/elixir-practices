@@ -57,3 +57,4 @@ iex -S mix run
 ### 12-Jun-2017
 
 - [Length of the list - Tail & Non-tail recursive form](https://github.com/vinhnglx/elixir-practices/blob/master/lib/practices.exs#L304-L335)
+- [Create range from two integer - Tail & Non-tail recursive form](https://github.com/vinhnglx/elixir-practices/blob/master/lib/practices.exs#L337-L364)
