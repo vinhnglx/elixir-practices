@@ -64,8 +64,11 @@ iex -S mix run
 
 - [Solve four small problems when reading a file:](https://github.com/vinhnglx/elixir-practices/blob/master/lib/practices.exs#L405-479)
 
-a. Returns a list of number, with each number representing the length of corresponding line from a file
-b. Returns the length of longest line from a file
-c. Returns the content of longest line from a file
-d. Returns number of words per line from a file
+	a. Returns a list of number, with each number representing the length of corresponding line from a file
+
+	b. Returns the length of longest line from a file
+
+	c. Returns the content of longest line from a file
+
+	d. Returns number of words per line from a file
 
